@@ -1,11 +1,3 @@
-gs-lirc
-=======
-
-A Java API to support implementing an LIRC client application.
-
-
-License
-=========
 Copyright 2012 Blake Dickie
 
 Licensed under the Apache License, Version 2.0 (the "License");

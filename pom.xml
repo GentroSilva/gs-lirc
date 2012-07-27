@@ -20,10 +20,39 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <inherited>false</inherited>
+                <groupId>com.google.code.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <header>${basedir}/src/license_header.txt</header>
+                    <failIfMissing>true</failIfMissing>
+                    <includes>
+                        <include>src/**</include>
+                    </includes>
+                    <excludes>
+                        <include>src/license_header.txt</include>
+                        <include>**/*.form</include>
+                        <include>**/META-INF/**</include>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>check-headers</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <netbeans.hint.license>apache20</netbeans.hint.license>
     </properties>
 
     <dependencies>
